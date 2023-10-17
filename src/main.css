@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Fira Code";
+  src: url(./assets/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf);
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(./assets/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf);
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url(./assets/fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf);
+  font-style: italic;
+}
+
+:root {
+  --bg-color: #ffffff;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(bg-color);
+}
+
+button {
+  font-family: inherit;
+}
