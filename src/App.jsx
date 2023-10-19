@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
+
+import Header from "./components/Header/Header.jsx";
 
 function App() {
   const [items, setItems] = useState(null);
@@ -15,6 +18,13 @@ function App() {
       setItems(response);
     });
   }, []);
+
+  return (
+    <div className="app">
+      <Header />
+      <Outlet />
+    </div>
+  );
 }
 
 export default App;
