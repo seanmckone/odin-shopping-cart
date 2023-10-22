@@ -9,4 +9,9 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./testSetup.js",
   },
+  css: {
+    modules: {
+      localsConvention: "camelCaseOnly",
+    },
+  },
 });
