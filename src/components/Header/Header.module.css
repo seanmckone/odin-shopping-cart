@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  background-color: var(--header-color);
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-title {
+  font-size: 30px;
+  font-family: "Fira Code";
+}

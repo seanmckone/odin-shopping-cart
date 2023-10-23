@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header />
+      <Header cartCount={6} />
       <Outlet />
     </div>
   );

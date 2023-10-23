@@ -1,0 +1,25 @@
+.cart-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: 1px;
+  width: 55px;
+  margin-top: -10px;
+  position: absolute;
+  right: 5px;
+}
+
+.cart-icon {
+  width: 25px;
+  margin-top: 10px;
+}
+
+.cart-count {
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-family: "Fira Code";
+}
