@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import styles from "./CheckoutPage.module.css";
+import { fetchItems } from "../../utils.js";
+
+const resource = "https://dog.ceo/api/breeds/image/random";
 
 function CheckoutPage() {
   const [imgUrl, setImgUrl] = useState(null);
 
   // Fetch dog image
   useEffect(() => {
-    async function fetchItems() {
-      const response = await fetch("https://dog.ceo/api/breeds/image/random");
-      const items = response.json();
-      return items;
-    }
-
-    fetchItems().then((response) => {
+    fetchItems(resource).then((response) => {
       setImgUrl(response.message);
     });
   }, []);

@@ -3,19 +3,16 @@ import { Outlet } from "react-router-dom";
 
 import Header from "./components/Header/Header.jsx";
 import styles from "./App.module.css";
+import { fetchItems } from "./utils.js";
+
+const resource = "https://fakestoreapi.com/products";
 
 function App() {
   const [items, setItems] = useState(null);
 
   // Fetch store items
   useEffect(() => {
-    async function fetchItems() {
-      const response = await fetch("https://fakestoreapi.com/products");
-      const items = response.json();
-      return items;
-    }
-
-    fetchItems().then((response) => {
+    fetchItems(resource).then((response) => {
       setItems(response);
     });
   }, []);
