@@ -20,6 +20,7 @@
   --bg-color: #ffffff;
   --header-color: #c2e0ed;
   --border-color: #bcbcbc;
+  --button-color: #ffe793;
   font-size: 16px;
 }
 
@@ -34,4 +35,5 @@ body {
 
 button {
   font-family: inherit;
+  cursor: pointer;
 }
