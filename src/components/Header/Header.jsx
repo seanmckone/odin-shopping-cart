@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import CartButton from "./CartButton/CartButton.jsx";
 import styles from "./Header.module.css";
@@ -6,7 +7,9 @@ import styles from "./Header.module.css";
 function Header({ onCartClick, cartCount }) {
   return (
     <div className={styles.header}>
-      <h1 className={styles.headerTitle}>Storem Ipsum</h1>
+      <Link to="/" className={styles.headerTitle}>
+        Storem Ipsum
+      </Link>
       <CartButton onClick={onCartClick} cartCount={cartCount} />
     </div>
   );
