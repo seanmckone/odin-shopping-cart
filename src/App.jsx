@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import Header from "./components/Header/Header.jsx";
+import styles from "./App.module.css";
 
 function App() {
   const [items, setItems] = useState(null);
@@ -20,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
+    <div className={styles.app}>
       <Header cartCount={6} />
       <Outlet />
     </div>
