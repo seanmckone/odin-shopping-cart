@@ -24,7 +24,7 @@ function CheckoutPage() {
         </h2>
         <h2>Enjoy this dog instead!</h2>
       </div>
-      {imgUrl ? <img src={imgUrl} className={styles.dogImage} /> : "Loading"}
+      {imgUrl ? <img src={imgUrl} className={styles.dogImage} /> : "Loading..."}
     </div>
   );
 }
