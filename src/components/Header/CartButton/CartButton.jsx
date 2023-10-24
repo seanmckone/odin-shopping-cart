@@ -14,7 +14,7 @@ function CartButton({ onClick, cartCount }) {
 
 CartButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  cartCount: PropTypes.string.isRequired,
+  cartCount: PropTypes.number.isRequired,
 };
 
 export default CartButton;
