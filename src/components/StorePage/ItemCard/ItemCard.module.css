@@ -1,13 +1,37 @@
 .item-card {
   display: flex;
-  flex-direction: column;
-  border: 2px solid black;
+  text-decoration: none;
+  color: var(--text-color);
   align-items: center;
-  width: 200px;
-  height: 250px;
-  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 15px;
+  gap: 30px;
+}
+
+.item-card:hover {
+  -webkit-box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.14);
 }
 
 .item-image {
-  width: 100px;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item-title {
+  font-size: 25px;
+}
+
+.item-price {
+  font-family: "Fira Code";
+  font-size: 20px;
+  font-weight: lighter;
 }

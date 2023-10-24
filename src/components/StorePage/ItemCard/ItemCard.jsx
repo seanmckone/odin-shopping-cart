@@ -7,8 +7,10 @@ function ItemCard({ itemId, itemImage, itemTitle, itemPrice }) {
   return (
     <Link to={`/item/${itemId}`} className={styles.itemCard}>
       <img src={itemImage} className={styles.itemImage} />
-      <h1 className={styles.itemTitle}>{itemTitle}</h1>
-      <h2 className={styles.itemPrice}>{itemPrice}</h2>
+      <div className={styles.itemInfo}>
+        <h1 className={styles.itemTitle}>{itemTitle}</h1>
+        <h2 className={styles.itemPrice}>${itemPrice}</h2>
+      </div>
     </Link>
   );
 }
