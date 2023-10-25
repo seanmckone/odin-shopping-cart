@@ -19,7 +19,7 @@ function ItemPage() {
   }, [id]);
 
   if (!item) {
-    return <p>Loading...</p>;
+    return null;
   }
 
   return (

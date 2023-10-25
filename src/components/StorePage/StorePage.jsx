@@ -17,7 +17,7 @@ function StorePage() {
   }, []);
 
   if (!items) {
-    return <p>Loading...</p>;
+    return null;
   }
 
   return (
