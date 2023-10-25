@@ -9,7 +9,7 @@ function ItemCard({ itemId, itemImage, itemTitle, itemPrice }) {
       <img src={itemImage} className={styles.itemImage} />
       <div className={styles.itemInfo}>
         <h1 className={styles.itemTitle}>{itemTitle}</h1>
-        <h2 className={styles.itemPrice}>${itemPrice}</h2>
+        <h2 className={styles.itemPrice}>${itemPrice.toFixed(2)}</h2>
       </div>
     </Link>
   );

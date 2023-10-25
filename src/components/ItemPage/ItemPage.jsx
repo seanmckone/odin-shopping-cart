@@ -29,7 +29,7 @@ function ItemPage() {
         <div className={styles.itemInfo}>
           <h1 className={styles.itemTitle}>{item.title}</h1>
           <StarRating rating={item.rating.rate} />
-          <h2 className={styles.itemPrice}>${item.price}</h2>
+          <h2 className={styles.itemPrice}>${item.price.toFixed(2)}</h2>
           <button type="button" className={styles.addToCartButton}>
             Add to cart
           </button>
