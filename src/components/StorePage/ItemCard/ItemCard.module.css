@@ -5,7 +5,6 @@
   align-items: center;
   padding: 20px;
   border: 1px solid white;
-  border-radius: 15px;
   gap: 30px;
 }
 
@@ -16,9 +15,10 @@
 }
 
 .item-image {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   object-fit: contain;
+  flex-shrink: 0;
 }
 .item-info {
   display: flex;
@@ -34,4 +34,14 @@
   font-family: "Fira Code";
   font-size: 20px;
   font-weight: lighter;
+}
+
+@media (max-width: 600px) {
+  .item-card {
+    flex-direction: column;
+  }
+
+  .item-info {
+    text-align: center;
+  }
 }
