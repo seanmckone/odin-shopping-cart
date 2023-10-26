@@ -1,19 +1,32 @@
-import styles from "./Cart.module.css";
-import closeIcon from "../../assets/icons/close.png";
+import PropTypes from "prop-types";
 
-function Cart({ cartObject }) {
+import styles from "./Cart.module.css";
+import CartItemDisplay from "./CartItemDisplay/CartItemDisplay";
+
+function Cart({ cartData, onChange }) {
   return (
     <div className={styles.cart}>
-      <div className={styles.cartHeader}>
-        <h1 className={styles.cartTitle}>Cart</h1>
-        <button type="button" className={styles.closeCartButton}>
-          <img src={closeIcon} className={styles.closeIcon} />
-        </button>
+      <h1 className={styles.cartTitle}>Cart</h1>
+      <div className={styles.cartItems}>
+        {cartData.map((cartItem) => {
+          return (
+            <CartItemDisplay
+              key={cartItem.id}
+              itemTitle={cartItem.title}
+              itemPrice={cartItem.price}
+              itemCount={cartItem.count}
+            ></CartItemDisplay>
+          );
+        })}
       </div>
-
       <div className={styles.cartFooter}></div>
     </div>
   );
 }
+
+Cart.propTypes = {
+  cartData: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default Cart;

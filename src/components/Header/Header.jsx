@@ -17,7 +17,7 @@ function Header({ onCartClick, cartCount }) {
 
 Header.propTypes = {
   onCartClick: PropTypes.func.isRequired,
-  cartCount: PropTypes.string.isRequired,
+  cartCount: PropTypes.number.isRequired,
 };
 
 export default Header;

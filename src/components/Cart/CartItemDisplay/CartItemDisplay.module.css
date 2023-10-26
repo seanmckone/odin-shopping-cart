@@ -1,0 +1,25 @@
+.cart-item-display {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.item-title,
+.item-price {
+  font-size: 18px;
+}
+
+.item-price {
+  font-family: "Fira Code";
+}
+
+.item-count-input {
+  width: 10ch;
+  text-align: right;
+}
