@@ -8,7 +8,7 @@ import cart from "./cartData.js";
 
 function App() {
   const [cartShowing, setCartShowing] = useState(false);
-  const [cartData, setCartData] = useState(cart.cartItems);
+  const [cartItems, setCartItems] = useState(cart.cartItems);
 
   function toggleCart() {
     setCartShowing((cartShowing) => !cartShowing);
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className={styles.app}>
       <Header cartCount={6} onCartClick={toggleCart} />
-      {cartShowing && <Cart cartData={cartData} />}
+      {cartShowing && <Cart cartItems={cartItems} onChange={setCartItems} />}
       <Outlet />
     </div>
   );
