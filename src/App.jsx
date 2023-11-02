@@ -14,9 +14,18 @@ function App() {
     setCartShowing((cartShowing) => !cartShowing);
   }
 
+  function calculateCartCount() {
+    let cartCount = 0;
+    for (const item of cartItems) {
+      cartCount += item.count;
+    }
+
+    return cartCount;
+  }
+
   return (
     <div className={styles.app}>
-      <Header cartCount={6} onCartClick={toggleCart} />
+      <Header cartCount={calculateCartCount()} onCartClick={toggleCart} />
       {cartShowing && <Cart cartItems={cartItems} onChange={setCartItems} />}
       <Outlet />
     </div>
