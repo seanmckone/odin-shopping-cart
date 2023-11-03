@@ -14,6 +14,20 @@ function Cart({ cartItems, onChange }) {
     return total;
   }
 
+  function handleCartChange(e, id) {
+    const newCartItems = cartItems.map((item) => {
+      if (item.id === id) {
+        const updatedItem = {
+          ...item,
+          count: parseInt(e.target.value),
+        };
+        return updatedItem;
+      }
+      return item;
+    });
+    onChange(newCartItems);
+  }
+
   return (
     <div className={styles.cart}>
       <h1 className={styles.cartTitle}>Cart</h1>
@@ -25,7 +39,7 @@ function Cart({ cartItems, onChange }) {
               itemTitle={cartItem.title}
               itemPrice={cartItem.price}
               itemCount={cartItem.count}
-              onChange={onChange}
+              onChange={(e) => handleCartChange(e, cartItem.id)}
             ></CartItemDisplay>
           );
         })}
