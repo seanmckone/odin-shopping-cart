@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import styles from "./ItemPage.module.css";
 import { fetchItems } from "../../utils.js";
@@ -8,8 +9,38 @@ import StarRating from "./StarRating/StarRating";
 const resource = "https://fakestoreapi.com/products/";
 
 function ItemPage() {
+  const { cartItems, setCartItems } = useOutletContext();
+
   const [item, setItem] = useState(null);
   const { id } = useParams();
+
+  function handleCartChange(id) {
+    let itemFound = false;
+    const newCartItems = cartItems.map((item) => {
+      if (item.id === id) {
+        const updatedItem = {
+          ...item,
+          count: item.count + 1,
+        };
+        itemFound = true;
+        return updatedItem;
+      }
+      return item;
+    });
+
+    if (!itemFound) {
+      const newItem = {
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        count: 1,
+      };
+      newCartItems.push(newItem);
+    }
+    localStorage.setItem("cart", JSON.stringify(newCartItems));
+
+    setCartItems(newCartItems);
+  }
 
   // Fetch item
   useEffect(() => {
@@ -30,7 +61,11 @@ function ItemPage() {
           <h1 className={styles.itemTitle}>{item.title}</h1>
           <StarRating rating={item.rating.rate} />
           <h2 className={styles.itemPrice}>${item.price.toFixed(2)}</h2>
-          <button type="button" className={styles.addToCartButton}>
+          <button
+            type="button"
+            className={styles.addToCartButton}
+            onClick={() => handleCartChange(item.id)}
+          >
             Add to cart
           </button>
         </div>
@@ -39,5 +74,10 @@ function ItemPage() {
     </div>
   );
 }
+
+ItemPage.propTypes = {
+  cartItems: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default ItemPage;

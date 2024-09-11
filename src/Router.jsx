@@ -11,7 +11,10 @@ function Router() {
       element: <App />,
       children: [
         { index: true, element: <StorePage /> },
-        { path: "item/:id", element: <ItemPage /> },
+        {
+          path: "item/:id",
+          element: <ItemPage />,
+        },
         { path: "checkout", element: <CheckoutPage /> },
       ],
     },
