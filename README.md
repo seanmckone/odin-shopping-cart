@@ -2,4 +2,4 @@
 
 A shopping cart for The Odin Project
 
-https://gilded-sunflower-ca75cf.netlify.app/item/1
+https://gilded-sunflower-ca75cf.netlify.app
